@@ -1,0 +1,27 @@
+namespace: zjleblanc
+name: tmdb
+version: 1.0.0
+
+authors:
+- Zach LeBlanc <zjleblanc3@gmail.com>
+description: The Movie Database (TMDB) automation content
+readme: README.md
+
+license_file: LICENSE
+
+tags:
+  - tmdb
+  - movies
+
+repository: https://github.com/zjleblanc/zjleblanc.tmdb
+documentation: https://github.com/zjleblanc/zjleblanc.tmdb/blob/master/README.md
+homepage: https://github.com/zjleblanc/zjleblanc.tmdb
+issues: https://github.com/zjleblanc/zjleblanc.tmdb/issues
+
+dependencies: {}
+build_ignore:
+  - .venv
+  - .gitignore
+  - ansible.cfg
+  - docs
+
