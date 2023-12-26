@@ -194,7 +194,7 @@ The response contains a **list** of movie objects in the **results** key. So how
 ]
 ```
 How does it work?
-- the first part of the query `results[]` creates a list project for each element in the JSON array
+- the first part of the query `results[]` creates a list projection for each element in the JSON array
 - the following expression is then applied to each element, in this case we simply return the `title`
 
 What if I want multiple properties? No problem, the second part of the query just changes a bit. Instead of simply returing the title, you would define an object with the keys of interest: `{title: title, release: release_date}`. A few things to note:
