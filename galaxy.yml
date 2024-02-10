@@ -1,6 +1,6 @@
 namespace: zjleblanc
 name: tmdb
-version: 1.0.0
+version: 1.0.1
 
 authors:
 - Zach LeBlanc <zjleblanc3@gmail.com>
@@ -23,5 +23,7 @@ build_ignore:
   - .venv
   - .gitignore
   - ansible.cfg
+  - collections
   - docs
+  - tests
 

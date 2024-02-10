@@ -1,3 +1,7 @@
 .venv/
 .vscode/
+collections/
 ansible.cfg
+zjleblanc-tmdb-*.tar.gz
+
+**/__pycache__/**

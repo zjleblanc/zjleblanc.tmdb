@@ -1,0 +1,36 @@
+---
+- name: Test zjleblanc.tmdb collection
+  hosts: localhost
+  gather_facts: false
+  become: false
+
+  tasks:
+    - name: Get favorite movies
+      register: r_fav_movies
+      zjleblanc.tmdb.favorite_movies_info:
+        account_id: 20850360
+
+    - name: Debug response
+      ansible.builtin.debug:
+        var: r_fav_movies.favorites
+
+    - name: Add Dune to favorites
+      register: r_add_dune
+      zjleblanc.tmdb.favorite_movies:
+        account_id: 20850360
+        movie_id: 438631
+
+    - name: Debug response
+      ansible.builtin.debug:
+        var: r_add_dune.favorites
+
+    - name: Remove Dune from favorites
+      register: r_del_dune
+      zjleblanc.tmdb.favorite_movies:
+        account_id: 20850360
+        movie_id: 438631
+        state: absent
+
+    - name: Debug response
+      ansible.builtin.debug:
+        var: r_del_dune.favorites

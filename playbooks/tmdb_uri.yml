@@ -40,6 +40,10 @@
         body:
           request_token: "{{ r_req_token['json']['request_token'] }}"
 
+    - name: Debug session
+      ansible.builtin.debug:
+        var: r_session.json
+
     - name: Set auth query
       ansible.builtin.set_fact:
         tmdb_auth_query: "api_key={{ tmdb_api_key }}&session_id={{ r_session['json']['session_id'] }}"
@@ -53,3 +57,7 @@
     - name: Debug favorite movies
       ansible.builtin.debug:
         var: r_fav_movies.json
+
+    - name: Debug favorite movies
+      ansible.builtin.debug:
+        msg: "{{ r_fav_movies.json | json_query('results[?vote_average>`8`].title') }}"
